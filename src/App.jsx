@@ -1,9 +1,10 @@
 import { createBrowserRouter,RouterProvider } from "react-router-dom"
-import SideBar from "./components/sidebar/SideBar"
+import Layout from "./layout/Layout"
 function App() {
+  
   const router = createBrowserRouter([{
     path:"/",
-    element:<SideBar/>,
+    element:<Layout/>,
   }])
 
   return (
