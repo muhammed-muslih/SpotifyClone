@@ -3,7 +3,7 @@ import { GoPlus } from "react-icons/go";
 import { PiGlobeSimple } from "react-icons/pi";
 const LibrarySection = () => {
   return (
-    <div className="bg-[rgba(18,18,18)] rounded-lg text-white py-5">
+    <div className="bg-[rgba(18,18,18)] rounded-lg text-white py-5 hidden md:block">
       <div className="flex justify-between px-6">
         <div className="text-white/50 hover:text-white transition-all duration-700 cursor-pointer flex gap-2">
           <BiLibrary size={26} />

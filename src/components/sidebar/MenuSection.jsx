@@ -17,10 +17,10 @@ const MenuSection = () => {
     },
   ];
   return (
-    <div className="bg-[rgba(18,18,18)] rounded-lg text-white px-6 py-5">
+    <div className="bg-[rgba(18,18,18)] rounded-lg text-white px-6 py-5 h-screen md:h-auto">
       <div className="flex items-center gap-0.5 cursor-pointer" title="spotify">
         <FaSpotify size={26} />
-        <span className="font-medium">Spotify</span>
+        <span className="font-medium hidden md:block">Spotify</span>
       </div>
       <div className="mt-5">
         {menus.map((menu, i) => (
@@ -36,7 +36,7 @@ const MenuSection = () => {
                 { size: 26 }
               )}
             </div>
-            <h1 className="capitalize font-medium">{menu.name}</h1>
+            <h1 className="capitalize font-medium hidden md:block">{menu.name}</h1>
           </Link>
         ))}
       </div>

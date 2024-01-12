@@ -2,18 +2,23 @@ import SideBar from "../components/sidebar/SideBar";
 import BottomBar from "../components/botttomBar/BottomBar";
 import TopBar from "../components/topBar/TopBar";
 import Footer from "../components/footer/footer";
+import Home from "../pages/Home";
 const Layout = () => {
   return (
     <>
-      <div className="hidden lg:flex flex-row gap-2">
+      <div className="flex flex-row gap-2">
         <SideBar />
-        <div className="bg-[rgb(9,9,9)] rounded-lg w-full overflow-y-scroll">
+        <div className="flex flex-col w-full  ">
           <TopBar />
-
-          <Footer />
+          <div className="bg-[rgb(9,9,9)] rounded-b-lg flex-grow overflow-y-scroll h-80">
+            <Home />
+            <Footer />
+          </div>
         </div>
       </div>
-      <BottomBar />
+      <div className="">
+        <BottomBar />
+      </div>
     </>
   );
 };

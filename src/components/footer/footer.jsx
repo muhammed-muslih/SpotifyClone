@@ -7,9 +7,9 @@ import {
 
 const Footer = () => {
   return (
-    <div className="px-7 py-4  min-w-full bg-[rgb(18,18,18)]">
+    <div className="px-7 py-4 min-w-full bg-[rgb(18,18,18)]">
       <div className=" flex justify-between pb-10">
-        <div className="grid grid-cols-3 space-x-14">
+        <div className="grid md:grid-cols-3 md:space-x-14 gap-4 md:gap-0">
           <div>
             <h1 className="text-white font-bold pb-2">Company</h1>
             <ul className="text-white/50 flex flex-col gap-2">
@@ -27,7 +27,9 @@ const Footer = () => {
           <div>
             <h1 className="text-white font-bold pb-2">Communities</h1>
             <ul className="text-white/50 flex flex-col gap-2">
-              <li>For Artists</li>
+              <li className="hover:underline hover:text-white/75 cursor-pointer">
+                For Artists
+              </li>
               <li className="hover:underline hover:text-white/75 cursor-pointer">
                 Developers
               </li>
@@ -54,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="text-white flex gap-4">
+        <div className="text-white flex gap-4 flex-col md:flex-row">
           <a
             href=""
             className="bg-[rgb(41,41,41)] rounded-full p-3 w-fit h-fit hover:bg-gray-500"
@@ -76,7 +78,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-12 border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1">
-        <FaRegCopyright/>
+        <FaRegCopyright />
         <h1>2024 Spotify AB</h1>
       </div>
     </div>
