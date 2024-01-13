@@ -5,12 +5,12 @@ import {
 import { Link } from "react-router-dom";
 const TopBar = () => {
   return (
-    <div className="text-white px-7 py-3 bg-[rgb(16,16,16)] rounded-t-lg flex justify-between sticky z-50 ">
+    <div className="text-white px-7 py-3  bg-transparent rounded-t-lg flex justify-between sticky z-50 ">
       <div className="flex gap-2 items-center">
-        <div className="bg-black rounded-full w-fit text-white/50">
+        <div className="bg-black rounded-full w-fit text-white/30">
           <MdOutlineKeyboardArrowLeft size={30} />
         </div>
-        <div className="bg-black rounded-full  w-fit text-white/50">
+        <div className="bg-black rounded-full  w-fit text-white/30">
           <MdOutlineKeyboardArrowRight size={30} />
         </div>
       </div>
