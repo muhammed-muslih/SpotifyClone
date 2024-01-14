@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
+import Playlist from "./pages/Playlist";
 function App() {
   const router = createBrowserRouter([
     {
@@ -11,6 +12,10 @@ function App() {
           path: "",
           element: <Home />,
         },
+        {
+          path:"playlist/:id",
+          element: <Playlist />
+        }
       ],
     },
   ]);

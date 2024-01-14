@@ -7,12 +7,12 @@ const Home = () => {
 
   const cards = playlists.map((item, index) => (
     <div key={index} className={`${index < visibleCards ? "block" : "hidden"}`}>
-      <Card img={item.img} title={item.title} description={item.description} />
+      <Card img={item.img} title={item.title} description={item.description} id={item.id}/>
     </div>
   ));
 
   return (
-    <div className="px-8 bg-[rgb(18,18,18)] py-2 pb-20 rounded-t-lg">
+    <div className="px-9 bg-[rgb(18,18,18)] py-2 pb-20">
       
       <div className="flex justify-between text-white">
         <h1 className="text-white font-semibold text-2xl hover:underline cursor-pointer">

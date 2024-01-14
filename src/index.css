@@ -6,15 +6,8 @@
   html {
     @apply bg-[rgb(0,0,0)] m-2;
   }
+  body {
+    @apply overflow-hidden
+  }
 }
 
-
-.truncated-paragraph {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  line-height: 1.4;
-  max-height: 2.8em;
-}
