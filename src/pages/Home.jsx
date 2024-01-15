@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "../components/card/Card";
+import { Card } from "../components";
 import { playlists } from "../data/playlists";
 import useColor from "../contexts/color";
 
