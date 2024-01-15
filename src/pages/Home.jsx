@@ -1,15 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/card/Card";
 import { playlists } from "../data/playlists";
+import useColor from "../contexts/color";
 
 const Home = () => {
   const [visibleCards, setVisibleCards] = useState(7);
+  const {updateColor,updateTopBarColor} = useColor()
 
   const cards = playlists.map((item, index) => (
     <div key={index} className={`${index < visibleCards ? "block" : "hidden"}`}>
       <Card img={item.img} title={item.title} description={item.description} id={item.id}/>
     </div>
   ));
+
+  const changeColor = (newColor) => {
+    updateColor(newColor)
+  }
+  const changeTopBarColor = (newTopBarColor) => {
+    updateTopBarColor(newTopBarColor)
+  }
+  useEffect(() => {
+    changeColor('bg-[rgb(12,12,12)]')
+    changeTopBarColor('bg-[rgb(12,12,12)]')
+
+  },[])
 
   return (
     <div className="px-9 bg-[rgb(18,18,18)] py-2 pb-20">

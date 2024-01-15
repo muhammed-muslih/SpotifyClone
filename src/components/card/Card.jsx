@@ -28,6 +28,6 @@ Card.propTypes = {
   img: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.string,
 };
 export default Card;

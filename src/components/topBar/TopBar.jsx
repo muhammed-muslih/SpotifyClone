@@ -3,9 +3,11 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import useColor from "../../contexts/color";
 const TopBar = () => {
+  const {topBarColor} = useColor();
   return (
-    <div className="text-white px-7 py-3  bg-transparent rounded-t-lg flex justify-between sticky z-50 ">
+    <div className={`text-white px-7 py-3  ${topBarColor} rounded-t-lg flex justify-between sticky z-50 `}>
       <div className="flex gap-2 items-center">
         <div className="bg-black rounded-full w-fit text-white/30">
           <MdOutlineKeyboardArrowLeft size={30} />
