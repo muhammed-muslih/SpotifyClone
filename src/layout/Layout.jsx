@@ -21,7 +21,7 @@ const Layout = () => {
       >
         <div className="flex flex-row gap-2">
           <SideBar />
-          <div className="flex flex-col w-full  bg-transparent rounded-t-lg">
+          <div className="flex flex-col w-full  bg-transparent  rounded-t-lg">
             <TopBar />
             <div id="scrollbar" className=" h-80 flex-grow rounded-b-lg">
               <ScrollBar />

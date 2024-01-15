@@ -9,7 +9,8 @@ export const playlists = [
       topBarColor:"bg-[#773f9d]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, rgba(120,70,157,0.9360119047619048) 20%, rgba(18,18,18,1) 100%)'
     },
     { 
       id:'2',
@@ -20,7 +21,9 @@ export const playlists = [
       topBarColor:"bg-[#73284a]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, rgba(115,40,74,1) 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'3',
@@ -28,11 +31,13 @@ export const playlists = [
       title: "Rock Classic",
       description:
         "Rock legends & epic songs that continue to inspire generations. Cover: Foo Fighters",
-        color:' bg-[#bc4d37]',
+      color:' bg-[#bc4d37]',
       topBarColor:"bg-[#a33827]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, rgb(163,56,39,1) 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'4',
@@ -43,7 +48,9 @@ export const playlists = [
       topBarColor:"bg-[#5E1B0C]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #5E1B0C 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'5',
@@ -54,7 +61,9 @@ export const playlists = [
       topBarColor:"bg-[#B78C01]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #B78C01 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'6',
@@ -65,7 +74,9 @@ export const playlists = [
       topBarColor:"bg-[#063468]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #063468 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'7' ,
@@ -76,7 +87,9 @@ export const playlists = [
       topBarColor:"bg-[#6d4c26]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #6d4c26 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'8',
@@ -88,7 +101,9 @@ export const playlists = [
       topBarColor:"bg-[#C88A66]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #C88A66 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'9',
@@ -99,7 +114,9 @@ export const playlists = [
       topBarColor:"bg-[#617d8e]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #617d8e 20%, rgba(18,18,18,1) 100%)'
+
     },
     { 
       id:'10',
@@ -107,10 +124,12 @@ export const playlists = [
       title: "all out 2020s",
       description:
         "The biggest songs of the 2020s.",
-        color:' bg-[#92c4e2]',
+      color:' bg-[#92c4e2]',
       topBarColor:"bg-[#5998C0]",
       likes:"5,185,972",
       songs:"750",
-      hours:"24"
+      hours:"24",
+      gradient:'linear-gradient(180deg, #5998C0 20%, rgba(18,18,18,1) 100%)'
+
     },
   ];

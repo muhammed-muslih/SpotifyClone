@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PlaylistHeader,PlaylistIcons } from "../components";
+import { PlaylistHeader, PlaylistIcons } from "../components";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
 import useColor from "../contexts/color";
@@ -7,13 +7,13 @@ import useColor from "../contexts/color";
 const Playlist = () => {
   const { id } = useParams();
   const [playlist, setPlayList] = useState({});
-  const { updateColor,updateTopBarColor } = useColor();
+  const { updateColor, updateTopBarColor } = useColor();
   const changeColor = (newColor) => {
     updateColor(newColor);
   };
   const changeTopBarColor = (newTopBarColor) => {
-    updateTopBarColor(newTopBarColor)
-  }
+    updateTopBarColor(newTopBarColor);
+  };
   useEffect(() => {
     const playlist = playlists.find((playlist) => playlist.id === id);
     if (playlist) {
@@ -25,11 +25,13 @@ const Playlist = () => {
 
   useEffect(() => {
     if (playlist) {
-      changeColor(playlist?.color?playlist?.color:"rgb(16,16,16)");
-      changeTopBarColor(playlist?.topBarColor?playlist?.topBarColor:'rgb(16,16,16)')
+      changeColor(playlist?.color ? playlist?.color : "rgb(16,16,16)");
+      changeTopBarColor(
+        playlist?.topBarColor ? playlist?.topBarColor : "rgb(16,16,16)"
+      );
     }
   }, [playlist]);
-  
+
   return (
     <div>
       <PlaylistHeader
@@ -42,7 +44,7 @@ const Playlist = () => {
         songs={playlist?.songs}
         hours={playlist?.hours}
       />
-      <PlaylistIcons/>
+      <PlaylistIcons gradient={playlist?.gradient}/>
     </div>
   );
 };
