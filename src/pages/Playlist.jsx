@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PlaylistHeader, PlaylistIcons } from "../components";
+import { PlaylistHeader, PlaylistIcons, MusicTable } from "../components";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
 import useColor from "../contexts/color";
@@ -44,7 +44,8 @@ const Playlist = () => {
         songs={playlist?.songs}
         hours={playlist?.hours}
       />
-      <PlaylistIcons gradient={playlist?.gradient}/>
+      <PlaylistIcons gradient={playlist?.gradient} />
+      <MusicTable />
     </div>
   );
 };

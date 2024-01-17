@@ -26,7 +26,7 @@ const Home = () => {
   },[])
 
   return (
-    <div className="px-9 bg-[rgb(18,18,18)] py-2 pb-20">
+    <div className="px-9 bg-[rgb(18,18,18)] py-2 pb-20 h-auto">
       
       <div className="flex justify-between text-white">
         <h1 className="text-white font-semibold text-2xl hover:underline cursor-pointer">

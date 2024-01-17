@@ -23,7 +23,7 @@ const Layout = () => {
           <SideBar />
           <div className="flex flex-col w-full  bg-transparent  rounded-t-lg">
             <TopBar />
-            <div id="scrollbar" className=" h-80 flex-grow rounded-b-lg">
+            <div id="scrollbar" className=" h-96 flex-grow rounded-b-lg">
               <ScrollBar />
               <div className="">
                 <Outlet />
@@ -32,7 +32,7 @@ const Layout = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div >
           <BottomBar />
         </div>
       </ColorProvider>

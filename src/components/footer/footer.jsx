@@ -56,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="text-white flex gap-4 flex-col md:flex-row">
+        <div className="text-white flex gap-4 flex-col lg:flex-row">
           <a
             href=""
             className="bg-[rgb(41,41,41)] rounded-full p-3 w-fit h-fit hover:bg-gray-500"
