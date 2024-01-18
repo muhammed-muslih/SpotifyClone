@@ -11,8 +11,8 @@ const MusicTable = () => {
         className="text-sm text-left  px-10 pb-20 hidden lg:block"
         style={{ background: "#121212" }}
       >
-        <table className="text-white/50  capitalize w-full rtl:text-right table-fixed">
-          <thead className="border-b border-gray-500">
+        <table className="text-white/50  capitalize w-full rtl:text-right relative ">
+          <thead className="border-b border-gray-500 sticky top-32  z-50 h-11">
             <tr>
               <th scope="" className="px-3 py-1 w-3">
                 #
@@ -26,10 +26,11 @@ const MusicTable = () => {
               </th>
             </tr>
           </thead>
-          <tr className="spacer-row ">
-            <td className="py-3"></td>
-          </tr>
+
           <tbody className="mt-10">
+            <tr className="spacer-row ">
+              <td className="py-3"></td>
+            </tr>
             {musicData?.map((music, index) => (
               <tr
                 className=" hover:bg-white/5 transition duration-300 ease-in-out group "
@@ -89,21 +90,16 @@ const MusicTable = () => {
       >
         {musicData?.map((music, index) => (
           <div
-            className={`rounded-lg px-4 py-4  flex flex-col sm:flex-row sm:justify-between transition duration-300 ease-in-out hover:bg-white/5`} key={index+music?.title}
+            className={`rounded-lg px-4 py-4  flex flex-col sm:flex-row sm:justify-between transition duration-300 ease-in-out hover:bg-white/5`}
+            key={index + music?.title}
           >
             <div className="flex gap-4 items-center">
-              <h1>{index+1}</h1>
+              <h1>{index + 1}</h1>
 
-              <img
-                src={music?.imgUrl}
-                className="h-16 rounded-md"
-                alt="img"
-              />
+              <img src={music?.imgUrl} className="h-16 rounded-md" alt="img" />
               <div>
                 <h3 className="font-semibold  text-white">{music?.title}</h3>
-                <h3 className="font-semibold text-sm">
-                  {music?.artist}
-                </h3>
+                <h3 className="font-semibold text-sm">{music?.artist}</h3>
                 <h3 className="font-semibold text-sm ">{music?.artist}</h3>
               </div>
             </div>

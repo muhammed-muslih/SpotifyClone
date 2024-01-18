@@ -16,11 +16,11 @@ const PlaylistIcons = ({ gradient }) => {
         </div>
         <RiHeartLine
           size={40}
-          className="text-white/50 hover:text-white duration-300 cursor-pointer hover:scale-105"
+          className="text-white/50 hover:text-white duration-300 cursor-pointer hover:scale-105 animate-pulse hover:animate-none"
         />
         <HiOutlineDotsHorizontal
           size={30}
-          className="text-white/50 hover:text-white duration-300 cursor-pointer hover:scale-105"
+          className="text-white/50 hover:text-white duration-300 cursor-pointer hover:scale-105 animate-pulse hover:animate-none"
         />
       </div>
       <div className="flex items-center gap-2 text-white/50 cursor-pointer font-bold hover:text-white duration-500 transition-all">

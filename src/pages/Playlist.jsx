@@ -3,21 +3,26 @@ import { PlaylistHeader, PlaylistIcons, MusicTable } from "../components";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
 import useColor from "../contexts/color";
+import usePlaylist from "../contexts/playlist";
 
 const Playlist = () => {
   const { id } = useParams();
   const [playlist, setPlayList] = useState({});
   const { updateColor, updateTopBarColor } = useColor();
+  const { updatePlaylistTitle } = usePlaylist();
+
   const changeColor = (newColor) => {
     updateColor(newColor);
   };
   const changeTopBarColor = (newTopBarColor) => {
     updateTopBarColor(newTopBarColor);
   };
+
   useEffect(() => {
     const playlist = playlists.find((playlist) => playlist.id === id);
     if (playlist) {
       setPlayList(playlist);
+      updatePlaylistTitle(playlist.title);
     } else {
       console.error(`Playlist with id ${id} not found.`);
     }
@@ -31,9 +36,10 @@ const Playlist = () => {
       );
     }
   }, [playlist]);
+  
 
   return (
-    <div>
+    <div className="" id="my-element">
       <PlaylistHeader
         id={id}
         img={playlist?.img}
