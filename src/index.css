@@ -6,8 +6,12 @@
   html {
     @apply bg-[rgb(0,0,0)] m-2;
   }
-  body {
-    @apply overflow-hidden
+body {
+    @apply overflow-hidden;
+  }  
+}
+@layer utilities {
+  .fixedHeader{
+    @apply bg-red-500;
   }
 }
-

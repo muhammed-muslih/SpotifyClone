@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { PlaylistHeader, PlaylistIcons, MusicTable } from "../components";
+import {
+  PlaylistHeader,
+  PlaylistIcons,
+  MusicTable,
+} from "../components";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
 import useColor from "../contexts/color";
@@ -36,10 +40,9 @@ const Playlist = () => {
       );
     }
   }, [playlist]);
-  
 
   return (
-    <div className="" id="my-element">
+    <div className="" >
       <PlaylistHeader
         id={id}
         img={playlist?.img}

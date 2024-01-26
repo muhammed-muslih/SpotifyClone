@@ -29,13 +29,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="px-9 bg-[rgb(18,18,18)] py-2 pb-20 h-auto">
+    <div className="px-4 sm:px-9 bg-[rgb(18,18,18)] py-2 pb-20 h-auto">
       <div className="flex justify-between text-white">
-        <h1 className="text-white font-semibold text-2xl hover:underline cursor-pointer">
+        <h1 className="text-white font-semibold text-xs sm:text-2xl hover:underline cursor-pointer">
           Spotify Playlists
         </h1>
         <h3
-          className={`text-white/50 text-sm font-bold cursor-pointer hover:underline ${
+          className={`text-white/50 text-xs font-normal cursor-pointer hover:underline ${
             visibleCards === playlists.length && "hidden"
           }`}
           onClick={() => setVisibleCards(playlists.length)}
@@ -43,7 +43,7 @@ const Home = () => {
           Show all
         </h3>
       </div>
-      <div className="flex flex-wrap gap-4  pt-4">{cards}</div>
+      <div className="flex flex-wrap gap-4 lg:gap-1 xl:gap-4  pt-4">{cards}</div>
     </div>
   );
 };

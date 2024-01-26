@@ -1,9 +1,14 @@
 import { BiLibrary } from "react-icons/bi";
 import { GoPlus } from "react-icons/go";
 import { PiGlobeSimple } from "react-icons/pi";
+import Scroll from "../scrollbar/Scrollbar";
 const LibrarySection = () => {
   return (
-    <div className="bg-[rgba(18,18,18)] rounded-lg text-white h-auto  py-5 hidden md:block">
+    <div
+      className="bg-[rgba(18,18,18)] rounded-lg text-white  h-fit py-5 hidden md:block md:h-[1200px]  xl:h-fit"
+      id="library"
+    >
+      <Scroll id={"library"} findHeight={false}/>
       <div className="flex justify-between px-6">
         <div className="text-white/50 hover:text-white transition-all duration-700 cursor-pointer flex gap-2">
           <BiLibrary size={26} />

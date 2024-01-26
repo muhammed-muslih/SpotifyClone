@@ -15,7 +15,7 @@ const PlaylistHeader = ({ id, img, title, description, color,likes,songs,hours }
         />
         <div>
           <h6 className="text-sm font-semibold animate-bounce hover:animate-none cursor-default">Playlist</h6>
-          <h1 className="lg:text-8xl text-2xl font-black leading-normal cursor-default">
+          <h1 className="lg:text-8xl text-2xl font-black leading-normal cursor-default capitalize">
             {title}
           </h1>
           <p className="font-semibold text-white/80 lg:pt-4 pt-2 text-sm">{description}</p>

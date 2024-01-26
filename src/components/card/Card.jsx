@@ -9,7 +9,7 @@ const Card = ({ img, title, description, id }) => {
 
   return (
     <div
-      className="bg-[rgb(24,24,24)] w-48 h-72 p-4 rounded-lg text-white cursor-pointer hover:bg-[rgb(36,36,36)] relative group"
+      className="bg-[rgb(24,24,24)] sm:w-48 sm:h-72 p-4 rounded-lg text-white cursor-pointer hover:bg-[rgb(36,36,36)] relative group"
       onClick={handleNavigate}
     >
       <img src={img} alt="" className="rounded-lg w-full" />
@@ -17,8 +17,8 @@ const Card = ({ img, title, description, id }) => {
         <IoMdPlay size={24} color="black" />
       </div>
 
-      <h1 className="font-semibold pt-5 text-base capitalize">{title}</h1>
-      <p className="text-sm text-white/50 pt-3 font-medium capitalize  line-clamp-2">
+      <h1 className="font-medium sm:font-semibold pt-5 text-xs sm:text-base capitalize">{title}</h1>
+      <p className="text-xs sm:text-sm text-white/50 pt-3 font-light sm:font-medium capitalize line-clamp-2">
         {description}
       </p>
     </div>

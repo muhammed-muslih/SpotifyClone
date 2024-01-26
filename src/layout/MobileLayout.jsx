@@ -1,14 +1,14 @@
 import { SideBar, Footer, TopBar, BottomBar } from "../components";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
-import { Scroll as Scrollbar} from "../components";
+import { Scroll as Scrollbar } from "../components";
 import {
   ColorProvider,
   ScrollProvider,
   PlaylistProvider,
 } from "../contexts/providers";
 
-const Layout = () => {
+const MobileLayout = () => {
   const [color, setColor] = useState("rgb(16,16,16)");
   const [topBarColor, setTopBarColor] = useState("rgb(16,16,16)");
   const [playlistTitle, setPlaylistTitle] = useState("");
@@ -45,16 +45,16 @@ const Layout = () => {
           }}
         >
           <PlaylistProvider value={{ playlistTitle, updatePlaylistTitle }}>
-            <div className="h-screen relative">
+           <div className="h-screen relative">
               <div className="flex flex-row gap-2">
                 <div className="max-w-20  md:max-w-96 h-auto">
                   <SideBar />
                 </div>
-                <div className="flex flex-col w-full  bg-transparent  rounded-t-lg">
+                <div className="flex flex-col w-full  bg-transparent  rounded-t-lg h-screen ">
                   <div className="">
                     <TopBar />
                   </div>
-                  <div id="scrollbar" className="h-96 flex-grow rounded-b-lg">
+                  <div id="scrollbar" className="flex-grow rounded-b-lg">
                     <div className="flex-grow  ">
                       <Scrollbar id={"scrollbar"} findHeight={true}/>
                       <Outlet />
@@ -73,4 +73,4 @@ const Layout = () => {
     </>
   );
 };
-export default Layout;
+export default MobileLayout;

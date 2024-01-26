@@ -4,7 +4,7 @@ import { GoHomeFill, GoHome } from "react-icons/go";
 import { RiSearchLine, RiSearchFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { IoLogInOutline } from "react-icons/io5";
+import { BiLogOut, BiLogIn } from "react-icons/bi";
 const MenuSection = () => {
   const location = useLocation();
   const menus = [
@@ -52,7 +52,17 @@ const MenuSection = () => {
           to={""}
           className={`flex md:hidden items-center gap-5 mt-5 text-white/45 hover:text-white transition-all duration-700 `}
         >
-          <div><IoLogInOutline size={26}  className=""/></div>
+          <div>
+            <BiLogIn size={26} className="" />
+          </div>
+        </Link>
+        <Link
+          to={""}
+          className={`flex md:hidden items-center gap-5 mt-5 text-white/45 hover:text-white transition-all duration-700 `}
+        >
+          <div>
+            <BiLogOut size={26} className="" />
+          </div>
         </Link>
       </div>
     </div>

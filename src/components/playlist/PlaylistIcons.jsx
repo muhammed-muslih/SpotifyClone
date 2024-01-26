@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const PlaylistIcons = ({ gradient }) => {
   return (
     <div
-      className={` px-7 py-6 flex flex-col md:flex-row md:justify-between gap-4`}
+      className={` px-7 py-6 flex flex-col md:flex-row md:justify-between gap-4 `}
       style={{ background: gradient }}
     >
       <div className="flex items-center gap-8">
