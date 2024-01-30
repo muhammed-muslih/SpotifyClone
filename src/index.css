@@ -4,14 +4,28 @@
 
 @layer base {
   html {
-    @apply bg-[rgb(0,0,0)] m-2;
+    @apply bg-[rgb(0,0,0)];
   }
-body {
+  body {
     @apply overflow-hidden;
-  }  
+  }
 }
 @layer utilities {
-  .fixedHeader{
+  .fixedHeader {
     @apply bg-red-500;
+  }
+  .login {
+    background: linear-gradient(
+      180deg,
+      rgba(42, 42, 42, 1) 30%,
+      rgba(8, 8, 8, 1) 80%
+    );
+  }
+  .login-section {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 18, 18, 1) 50%,
+      rgba(37, 37, 37, 1) 100%
+    );
   }
 }

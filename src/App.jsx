@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout, MobileLayout } from "./layout";
-import Home from "./pages/Home";
-import Playlist from "./pages/Playlist";
+import { Home,Playlist,Login } from "./pages";
 import { useMediaQuery } from "react-responsive";
 function App() {
   const isSmallScreen = useMediaQuery({ maxWidth: "1024px" });
@@ -20,6 +19,10 @@ function App() {
         },
       ],
     },
+    {
+      path:"/login",
+      element: <Login />,
+    }
   ]);
 
   return (

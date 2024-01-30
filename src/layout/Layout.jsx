@@ -1,7 +1,7 @@
 import { SideBar, Footer, TopBar, BottomBar } from "../components";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
-import { Scroll as Scrollbar} from "../components";
+import { Scroll as Scrollbar } from "../components";
 import {
   ColorProvider,
   ScrollProvider,
@@ -45,7 +45,7 @@ const Layout = () => {
           }}
         >
           <PlaylistProvider value={{ playlistTitle, updatePlaylistTitle }}>
-            <div className="h-screen relative">
+            <div className="h-screen relative m-2">
               <div className="flex flex-row gap-2">
                 <div className="max-w-20  md:max-w-96 h-auto">
                   <SideBar />
@@ -56,7 +56,7 @@ const Layout = () => {
                   </div>
                   <div id="scrollbar" className="h-96 flex-grow rounded-b-lg">
                     <div className="flex-grow  ">
-                      <Scrollbar id={"scrollbar"} findHeight={true}/>
+                      <Scrollbar id={"scrollbar"} findHeight={true} />
                       <Outlet />
                       <Footer />
                     </div>

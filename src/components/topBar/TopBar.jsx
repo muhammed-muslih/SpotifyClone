@@ -55,7 +55,7 @@ const TopBar = () => {
             Sign up
           </Link>
           <Link
-            to={"/"}
+            to={"/login"}
             className="bg-white px-1 md:px-8 py-1 md:py-3 rounded-full text-black font-bold inline-block transform hover:scale-105 transition-transform"
           >
             Log in
