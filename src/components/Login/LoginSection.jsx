@@ -32,10 +32,12 @@ const LoginSection = () => {
     },
   ];
   return (
-    <div className="login-section h-screen  max-w-screen-md rounded-lg px-28 py-14 flex flex-col items-center justify-center divide-y divide-gray-500 ">
+    <div className="login-section  overflow-x-hidden w-full lg:max-w-screen-md rounded-b-lg lg:rounded-lg px-2 md:px-28 p-2 md:p-10 flex flex-col items-center justify-center divide-y divide-white/15 ">
       <div className="pb-10 flex flex-col items-center">
-        <h1 className="text-5xl text-white font-semibold">Log in to Spotify</h1>
-        <div className="flex flex-col w-fit pt-14 gap-2 px-24 ">
+        <h1 className="text-xl sm:text-3xl md:text-5xl mt-0 lg:mt-8 text-white font-semibold">
+          Log in to Spotify
+        </h1>
+        <div className="flex flex-col w-fit pt-14 gap-2 px-4 md:px-28 ">
           {continueWithObj?.map((elem, i) => (
             <LoginWith
               key={i + elem.text}
@@ -47,8 +49,16 @@ const LoginSection = () => {
           ))}
         </div>
       </div>
-      <div className="pt-8 w-full  px-24">
+      <div className="pt-8  w-full lg:w-full pb-4 px-4 md:px-28">
         <LoginForm />
+      </div>
+      <div className="w-full px-4 md:px-28">
+        <div className="text-white text-sm sm:text-sm  font-medium py-2 flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-10">
+          <h1 className="text-white/70">Don&#39;t have an account?</h1>
+          <h1 className="underline hover:text-green-500">
+            Sign up for Spotify
+          </h1>
+        </div>
       </div>
     </div>
   );

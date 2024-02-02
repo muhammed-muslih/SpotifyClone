@@ -10,7 +10,7 @@ const LoginTop = () => {
           title="spotify"
         >
           <FaSpotify size={36} />
-          <span className="font-bold text-xl hidden md:block">Spotify</span>
+          <span className="font-bold text-xl ">Spotify</span>
         </div>
       </Link>
     </div>
