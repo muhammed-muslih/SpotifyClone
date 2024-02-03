@@ -1,4 +1,4 @@
-import { SideBar, Footer, TopBar, BottomBar } from "../components";
+import { SideBar, Footer, TopBar, BottomBar, MusicBar } from "../components";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import { Scroll as Scrollbar } from "../components";
@@ -13,6 +13,7 @@ const Layout = () => {
   const [topBarColor, setTopBarColor] = useState("rgb(16,16,16)");
   const [playlistTitle, setPlaylistTitle] = useState("");
   const [isScrollHeightReached, setIsScrollHeightReached] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
 
   const updateColor = (newColor) => {
     setColor(newColor);
@@ -63,8 +64,12 @@ const Layout = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute bottom-3 md:bottom-0 xl:bottom-4 w-full z-50">
-                <BottomBar />
+              <div
+                className={`absolute  w-full z-50 ${
+                  isLogged ? "bottom-0" : "bottom-0 xl:bottom-2 2xl:bottom-4"
+                }`}
+              >
+                {isLogged ? <MusicBar /> : <BottomBar />}
               </div>
             </div>
           </PlaylistProvider>

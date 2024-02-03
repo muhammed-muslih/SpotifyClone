@@ -89,7 +89,7 @@ const MusicTable = () => {
 
       <div
         style={{ background: "#121212" }}
-        className="text-white/50  capitalize w-full rtl:text-right xl:hidden px-4 py-4 grid grid-cols-1 gap-1"
+        className="text-white/50  capitalize w-full rtl:text-right xl:hidden px-4 py-4 grid grid-cols-1 gap-1 overflow-x-hidden"
       >
         {musicData?.map((music, index) => (
           <div
@@ -101,18 +101,18 @@ const MusicTable = () => {
 
               <img
                 src={music?.imgUrl}
-                className="h-16 rounded-md text-white"
+                className="h-14 rounded-md text-white"
                 alt="image"
               />
               <div>
-                <h3 className="font-semibold  text-white">{music?.title}</h3>
-                <h3 className="font-semibold text-sm">{music?.artist}</h3>
-                <h3 className="font-semibold text-sm ">{music?.artist}</h3>
+                <h3 className="font-medium text-sm text-white">{music?.title}</h3>
+                <h3 className="font-medium text-xs">{music?.artist}</h3>
+                <h3 className="font-medium text-xs ">{music?.album}</h3>
               </div>
             </div>
-            <div className=" flex md:flex-col gap-4 sm:gap-1 items-center text-xs justify-end">
-              <h4>{music?.dateAdded}</h4>
-              <h4>{music?.duration}</h4>
+            <div className=" flex md:flex-col gap-3 sm:gap-1 items-center text-xs justify-end">
+              <h4 className="text-xs font-extralight">{music?.dateAdded}</h4>
+              <h4 className="text-xs font-extralight">{music?.duration}</h4>
             </div>
           </div>
         ))}

@@ -2,7 +2,16 @@ import PropTypes from "prop-types";
 import { FaSpotify } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
 
-const PlaylistHeader = ({ id, img, title, description, color,likes,songs,hours }) => {
+const PlaylistHeader = ({
+  id,
+  img,
+  title,
+  description,
+  color,
+  likes,
+  songs,
+  hours,
+}) => {
   return (
     <div>
       <div
@@ -11,14 +20,19 @@ const PlaylistHeader = ({ id, img, title, description, color,likes,songs,hours }
       >
         <img
           src={img}
-          className={`h-60 rounded drop-shadow-lg shadow-gray-800  shadow-md`} alt="cover img"
+          className={`rounded drop-shadow-lg shadow-gray-800  shadow-md h-52 sm:h-60`}
+          alt="cover img"
         />
         <div>
-          <h6 className="text-sm font-semibold animate-bounce hover:animate-none cursor-default">Playlist</h6>
-          <h1 className="lg:text-8xl text-2xl font-black leading-normal cursor-default capitalize">
+          <h6 className="text-sm font-semibold animate-bounce hover:animate-none cursor-default">
+            Playlist
+          </h6>
+          <h1 className="2xl:text-8xl lg:text-4xl text-2xl font-black leading-normal cursor-default capitalize">
             {title}
           </h1>
-          <p className="font-semibold text-white/80 lg:pt-4 pt-2 text-sm">{description}</p>
+          <p className="font-semibold text-white/80 lg:pt-4 pt-2 text-sm">
+            {description}
+          </p>
           <div className="flex items-center flex-col md:flex-row  gap-1 pt-2 cursor-pointer text-white ">
             <FaSpotify
               size={24}
@@ -28,7 +42,7 @@ const PlaylistHeader = ({ id, img, title, description, color,likes,songs,hours }
             <span className="font-bold text-sm text-white hover:underline">
               Spotify
             </span>
-            
+
             <GoDotFill size={8} />
             <h6 className="text-sm font-semibold">
               <span className="text-base">{likes}</span> likes
@@ -53,5 +67,5 @@ PlaylistHeader.propTypes = {
   color: PropTypes.string,
   likes: PropTypes.string,
   songs: PropTypes.string,
-  hours: PropTypes.string
+  hours: PropTypes.string,
 };

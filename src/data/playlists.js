@@ -1,11 +1,11 @@
 
-export const playlists = [
+export const playlist1 = [
     {
       id:'1',  
       img: "https://pub-static.fotor.com/assets/projects/pages/c7d9749a29fc44a5a54da2bba21165af/gradient-cool-new-bullet-e52b9cac8825471981dc12dd343176da.jpg",
       title: "Today's Top Hits",
       description: " Noah Kahan is on top of the Hottest 50! ",
-      color:' bg-[#be71f3]',
+      color:'bg-[#be71f3]',
       topBarColor:"bg-[#773f9d]",
       likes:"5,185,972",
       songs:"750",
@@ -17,7 +17,7 @@ export const playlists = [
       img: "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2022/03/spotify-playlist-cover-woman-listeningt-to-headphones-purple-music-032322.jpg",
       title: "Mood Booster",
       description: "Get happy with today's dose of feel-good songs!",
-      color:' bg-[#b33952]',
+      color:'bg-[#b33952]',
       topBarColor:"bg-[#73284a]",
       likes:"5,185,972",
       songs:"750",
@@ -133,3 +133,128 @@ export const playlists = [
 
     },
   ];
+
+
+  export const playlist2 = [
+    {
+      id: '11',
+      img: "https://i.scdn.co/image/ab67706c0000da84889bf1f167f92b4cd68bc6b4",
+      title: "Fresh Beats",
+      description: "Explore the latest beats and rhythms from emerging talents.",
+      color: 'bg-[#4caf50]',
+      topBarColor: "bg-[#2e7d32]",
+      likes: "1,234,567",
+      songs: "100",
+      hours: "10",
+      gradient: 'linear-gradient(180deg, #2e7d32 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '12',
+      img: "https://art5772.files.wordpress.com/2023/04/chill-hero.png",
+      title: "New Soundscape",
+      description: "Dive into a fresh soundscape with the latest tracks from rising artists.",
+      color: 'bg-[#2196f3]',
+      topBarColor: "bg-[#1565c0]",
+      likes: "987,654",
+      songs: "80",
+      hours: "8",
+      gradient: 'linear-gradient(180deg, #1565c0 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '13',
+      img: "https://slaysonics.com/wp-content/uploads/2018/11/New-Music-Friday-Playlist.jpg",
+      title: "Upcoming Vibes",
+      description: "Catch the vibes of the next big hits with this curated playlist.",
+      color: 'bg-[#ff9800]',
+      topBarColor: "bg-[#f57c00]",
+      likes: "765,432",
+      songs: "120",
+      hours: "12",
+      gradient: 'linear-gradient(180deg, #f57c00 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '14',
+      img: "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2022/03/spotify-playlist-cover-woman-in-blue-with-headphones-032322.jpg",
+      title: "Emerging Artists",
+      description: "Discover fresh sounds from talented emerging artists around the world.",
+      color: 'bg-[#9c27b0]',
+      topBarColor: "bg-[#6a1b9a]",
+      likes: "543,210",
+      songs: "90",
+      hours: "9",
+      gradient: 'linear-gradient(180deg, #6a1b9a 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '15',
+      img: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/64c72857183915.59cbcc586d1d1.jpg",
+      title: "New Wave",
+      description: "Ride the wave of new music trends with this cutting-edge playlist.",
+      color: 'bg-[#e91e63]',
+      topBarColor: "bg-[#c2185b]",
+      likes: "876,543",
+      songs: "110",
+      hours: "11",
+      gradient: 'linear-gradient(180deg, #c2185b 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '16',
+      img: "https://i.scdn.co/image/ab67706c0000da84a9950ac9dff39bbbf07a499f",
+      title: "NextGen Sounds",
+      description: "Experience the future of music with these groundbreaking tracks.",
+      color: 'bg-[#607d8b]',
+      topBarColor: "bg-[#37474f]",
+      likes: "654,321",
+      songs: "95",
+      hours: "9.5",
+      gradient: 'linear-gradient(180deg, #37474f 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '17',
+      img: "https://www.musicinminnesota.com/wp-content/uploads/2022/01/Photo-from-Shutterstock.jpg",
+      title: "Innovative Tunes",
+      description: "Immerse yourself in innovation with this collection of groundbreaking tunes.",
+      color: 'bg-[#3f51b5]',
+      topBarColor: "bg-[#283593]",
+      likes: "432,109",
+      songs: "85",
+      hours: "8.5",
+      gradient: 'linear-gradient(180deg, #283593 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '18',
+      img: "https://i.scdn.co/image/ab67706c0000da8424780f68919d951f48c3c9f5",
+      title: "Future Sounds",
+      description: "Get a glimpse into the future of music with this forward-thinking playlist.",
+      color: 'bg-[#ff5722]',
+      topBarColor: "bg-[#e64a19]",
+      likes: "987,123",
+      songs: "105",
+      hours: "10.5",
+      gradient: 'linear-gradient(180deg, #e64a19 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '19',
+      img: "https://soundplate.com/wp-content/uploads/XEL_THECUTTINGEDGE800.jpg",
+      title: "Cutting-Edge Beats",
+      description: "Stay ahead of the curve with the latest cutting-edge beats from emerging artists.",
+      color: 'bg-[#795548]',
+      topBarColor: "bg-[#4e342e]",
+      likes: "876,987",
+      songs: "95",
+      hours: "9.5",
+      gradient: 'linear-gradient(180deg, #4e342e 20%, rgba(18,18,18,1) 100%)'
+    },
+    {
+      id: '20',
+      img: "https://i.scdn.co/image/ab67706c0000da84b0cacc42388d2954056aae37",
+      title: "Revolutionary Sounds",
+      description: "Revolutionize your playlist with these groundbreaking sounds from up-and-coming artists.",
+      color: 'bg-[#009688]',
+      topBarColor: "bg-[#00796b]",
+      likes: "765,876",
+      songs: "110",
+      hours: "11",
+      gradient: 'linear-gradient(180deg, #00796b 20%, rgba(18,18,18,1) 100%)'
+    },
+  ];
+  

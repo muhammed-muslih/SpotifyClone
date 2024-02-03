@@ -14,7 +14,7 @@ function App() {
           element: <Home />,
         },
         {
-          path: "playlist/:id",
+          path: "playlist/:playlist/:id",
           element: <Playlist />,
         },
       ],

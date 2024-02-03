@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import {
-  PlaylistHeader,
-  PlaylistIcons,
-  MusicTable,
-} from "../components";
+import { PlaylistHeader, PlaylistIcons, MusicTable } from "../components";
 import { useParams } from "react-router-dom";
-import { playlists } from "../data/playlists";
+import { playlist1, playlist2 } from "../data/playlists";
 import useColor from "../contexts/color";
 import usePlaylist from "../contexts/playlist";
 
 const Playlist = () => {
-  const { id } = useParams();
-  const [playlist, setPlayList] = useState({});
+  const { id, playlist } = useParams();
+  const [currentPlaylist, setCurrentPlayList] = useState({});
   const { updateColor, updateTopBarColor } = useColor();
   const { updatePlaylistTitle } = usePlaylist();
 
@@ -23,37 +19,46 @@ const Playlist = () => {
   };
 
   useEffect(() => {
-    const playlist = playlists.find((playlist) => playlist.id === id);
-    if (playlist) {
-      setPlayList(playlist);
-      updatePlaylistTitle(playlist.title);
+    let currentPlaylist;
+    if (playlist === "spotifyplaylists") {
+      currentPlaylist = playlist1.find((playlist) => playlist.id === id);
     } else {
-      console.error(`Playlist with id ${id} not found.`);
+      currentPlaylist = playlist2.find((playlist) => playlist.id === id);
     }
-  }, [id]);
+    if (currentPlaylist) {
+      setCurrentPlayList(currentPlaylist);
+      updatePlaylistTitle(currentPlaylist.title);
+    } else {
+      console.error(`Playlist with playlis ${playlist} and  id ${id} not found.`);
+    }
+  }, [playlist, id]);
 
   useEffect(() => {
-    if (playlist) {
-      changeColor(playlist?.color ? playlist?.color : "rgb(16,16,16)");
+    if (currentPlaylist) {
+      changeColor(
+        currentPlaylist?.color ? currentPlaylist?.color : "rgb(16,16,16)"
+      );
       changeTopBarColor(
-        playlist?.topBarColor ? playlist?.topBarColor : "rgb(16,16,16)"
+        currentPlaylist?.topBarColor
+          ? currentPlaylist?.topBarColor
+          : "rgb(16,16,16)"
       );
     }
-  }, [playlist]);
+  }, [currentPlaylist]);
 
   return (
-    <div className="" >
+    <div className="">
       <PlaylistHeader
         id={id}
-        img={playlist?.img}
-        title={playlist?.title}
-        description={playlist?.description}
-        color={playlist?.color}
-        likes={playlist?.likes}
-        songs={playlist?.songs}
-        hours={playlist?.hours}
+        img={currentPlaylist?.img}
+        title={currentPlaylist?.title}
+        description={currentPlaylist?.description}
+        color={currentPlaylist?.color}
+        likes={currentPlaylist?.likes}
+        songs={currentPlaylist?.songs}
+        hours={currentPlaylist?.hours}
       />
-      <PlaylistIcons gradient={playlist?.gradient} />
+      <PlaylistIcons gradient={currentPlaylist?.gradient} />
       <MusicTable />
     </div>
   );

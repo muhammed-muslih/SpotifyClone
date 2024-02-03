@@ -12,6 +12,9 @@ import LoginWith from "./Login/LoginWith";
 import LoginForm from "./Login/LoginForm";
 import LoginSection from "./Login/LoginSection";
 import LoginBottom from "./Login/LoginBottom";
+import CardSection from "./card/CardSection";
+import MusicBar from "./musicBar/MusicBar";
 
 
-export {SideBar,BottomBar,TopBar,Footer,Card,PlaylistHeader,Scroll,PlaylistIcons,MusicTable,LoginForm,LoginTop,LoginWith,LoginSection,LoginBottom} 
+
+export {SideBar,BottomBar,TopBar,Footer,Card,PlaylistHeader,Scroll,PlaylistIcons,MusicTable,LoginForm,LoginTop,LoginWith,LoginSection,LoginBottom,CardSection,MusicBar} 

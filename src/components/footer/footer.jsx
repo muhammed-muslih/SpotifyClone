@@ -7,7 +7,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="px-7 py-4 min-w-full bg-[rgb(18,18,18)]">
+    <div className="px-4 sm:px-9 py-4 min-w-full bg-[rgb(18,18,18)] pt-20">
       <div className=" flex justify-between pb-10">
         <div className="grid md:grid-cols-3 md:space-x-14 gap-4 md:gap-0">
           <div>
@@ -77,7 +77,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="py-12 border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1">
+      <div className="py-[5rem] xl:py-14 border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1">
         <FaRegCopyright />
         <h1>2024 Spotify AB</h1>
       </div>
