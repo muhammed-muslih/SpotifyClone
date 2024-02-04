@@ -3,10 +3,22 @@ import { IoIosPlay } from "react-icons/io";
 import { RiHeartLine } from "react-icons/ri";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import musicData from "../../data/musicData";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import useScroll from "../../contexts/scroll";
 
 const MusicTable = () => {
   const ref = useRef(null);
+  const { scrollbar } = useScroll();
+
+  useEffect(() => {
+    var fixedElement = document.getElementById("fixedheader");
+    if (fixedElement && scrollbar) {
+      scrollbar.addListener(function ({ offset }) {
+        fixedElement.style.top = offset.y + "px";
+        fixedElement.style.backgroundColor = "#121212";
+      });
+    }
+  }, [scrollbar]);
 
   return (
     <>
@@ -15,7 +27,11 @@ const MusicTable = () => {
         style={{ background: "#121212" }}
       >
         <table className="text-white/50  capitalize w-full rtl:text-right border-spacing-0">
-          <thead className={`border-b border-gray-500 w-full  sticky top-[380px] z-50`} ref={ref}>
+          <thead
+            className={`border-b border-gray-500 w-full  sticky  z-50`}
+            ref={ref}
+            id="fixedheader"
+          >
             <tr>
               <th scope="" className="px-3 py-1 w-3">
                 #
@@ -105,7 +121,9 @@ const MusicTable = () => {
                 alt="image"
               />
               <div>
-                <h3 className="font-medium text-sm text-white">{music?.title}</h3>
+                <h3 className="font-medium text-sm text-white">
+                  {music?.title}
+                </h3>
                 <h3 className="font-medium text-xs">{music?.artist}</h3>
                 <h3 className="font-medium text-xs ">{music?.album}</h3>
               </div>

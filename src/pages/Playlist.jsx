@@ -10,7 +10,7 @@ const Playlist = () => {
   const [currentPlaylist, setCurrentPlayList] = useState({});
   const { updateColor, updateTopBarColor } = useColor();
   const { updatePlaylistTitle } = usePlaylist();
-
+  
   const changeColor = (newColor) => {
     updateColor(newColor);
   };
@@ -29,7 +29,9 @@ const Playlist = () => {
       setCurrentPlayList(currentPlaylist);
       updatePlaylistTitle(currentPlaylist.title);
     } else {
-      console.error(`Playlist with playlis ${playlist} and  id ${id} not found.`);
+      console.error(
+        `Playlist with playlis ${playlist} and  id ${id} not found.`
+      );
     }
   }, [playlist, id]);
 
@@ -45,6 +47,7 @@ const Playlist = () => {
       );
     }
   }, [currentPlaylist]);
+ 
 
   return (
     <div className="">

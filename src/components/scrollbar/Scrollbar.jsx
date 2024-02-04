@@ -18,7 +18,7 @@ const Scroll = ({ id, findHeight }) => {
       overscroll: { ...overScrollOptions },
     },
   };
-  const { updateScrollHeightReached } = useScroll();
+  const { updateScrollHeightReached, updateScrollbar } = useScroll();
   const [scrollbar, setScrollbar] = useState({});
   const { pathname } = useLocation();
 
@@ -28,6 +28,7 @@ const Scroll = ({ id, findHeight }) => {
       Scrollbar.use(OverscrollPlugin);
       const scrollbar = Scrollbar.init(scrollElement, options);
       setScrollbar(scrollbar);
+      updateScrollbar(scrollbar)
       if (findHeight) {
         scrollbar.addListener(({ offset }) => {
           if (offset.y >= 320) {

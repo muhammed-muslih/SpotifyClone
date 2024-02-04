@@ -37,18 +37,18 @@ const MusicBar = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-end">
-        <div className="text-white text-lg flex flex-row gap-4  items-center">
-          <div className="text-[#4d4c4d]">
+      <div className="hidden md:flex md:justify-end">
+        <div className="text-white/70 text-lg flex flex-row gap-4  items-center">
+          <div className="text-[#4d4c4d] cursor-not-allowed">
             <AiOutlinePlaySquare />
           </div>
-          <div>
+          <div className="cursor-pointer hover:text-white transition-all duration-200">
             <HiOutlineQueueList />
           </div>
-          <div>
+          <div className="cursor-default hover:text-white transition-all duration-200">
             <MdDevicesOther />
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 cursor-default transition-all duration-200">
             <GrVolumeLow />
             <div className="rounded-full w-24 h-1 bg-[#4d4c4d]"></div>
           </div>

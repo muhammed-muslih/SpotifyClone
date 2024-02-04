@@ -11,8 +11,9 @@
   }
 }
 @layer utilities {
-  .fixedHeader {
-    @apply bg-red-500;
+  .fixedheader {
+    position: sticky;
+    top: 0px;
   }
   .login {
     background: linear-gradient(

@@ -1,7 +1,7 @@
 import { SideBar, Footer, TopBar, BottomBar, MusicBar } from "../components";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
-import { Scroll as Scrollbar } from "../components";
+import { Scroll } from "../components";
 import {
   ColorProvider,
   ScrollProvider,
@@ -13,6 +13,7 @@ const Layout = () => {
   const [topBarColor, setTopBarColor] = useState("rgb(16,16,16)");
   const [playlistTitle, setPlaylistTitle] = useState("");
   const [isScrollHeightReached, setIsScrollHeightReached] = useState(false);
+  const [scrollbar, setScrollbar] = useState(null);
   const [isLogged, setIsLogged] = useState(true);
 
   const updateColor = (newColor) => {
@@ -27,6 +28,9 @@ const Layout = () => {
   };
   const updateScrollHeightReached = (bool) => {
     setIsScrollHeightReached(bool);
+  };
+  const updateScrollbar = (scrollbar) => {
+    setScrollbar(scrollbar);
   };
 
   return (
@@ -43,6 +47,8 @@ const Layout = () => {
           value={{
             isScrollHeightReached,
             updateScrollHeightReached,
+            scrollbar,
+            updateScrollbar,
           }}
         >
           <PlaylistProvider value={{ playlistTitle, updatePlaylistTitle }}>
@@ -57,7 +63,7 @@ const Layout = () => {
                   </div>
                   <div id="scrollbar" className="h-96 flex-grow rounded-b-lg">
                     <div className="flex-grow  ">
-                      <Scrollbar id={"scrollbar"} findHeight={true} />
+                      <Scroll id={"scrollbar"} findHeight={true} />
                       <Outlet />
                       <Footer />
                     </div>
