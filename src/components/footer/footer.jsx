@@ -77,7 +77,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="py-[5rem] xl:py-14 border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1">
+      <div className="py-20 pb-40 xl:py-14 border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1">
         <FaRegCopyright />
         <h1>2024 Spotify AB</h1>
       </div>

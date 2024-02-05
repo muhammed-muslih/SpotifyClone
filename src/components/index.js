@@ -14,7 +14,8 @@ import LoginSection from "./Login/LoginSection";
 import LoginBottom from "./Login/LoginBottom";
 import CardSection from "./card/CardSection";
 import MusicBar from "./musicBar/MusicBar";
+import ProgressBar from "./progressBar/ProgressBar";
 
 
 
-export {SideBar,BottomBar,TopBar,Footer,Card,PlaylistHeader,Scroll,PlaylistIcons,MusicTable,LoginForm,LoginTop,LoginWith,LoginSection,LoginBottom,CardSection,MusicBar} 
+export {SideBar,BottomBar,TopBar,Footer,Card,PlaylistHeader,Scroll,PlaylistIcons,MusicTable,LoginForm,LoginTop,LoginWith,LoginSection,LoginBottom,CardSection,MusicBar,ProgressBar} 

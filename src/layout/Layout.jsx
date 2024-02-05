@@ -6,12 +6,14 @@ import {
   ColorProvider,
   ScrollProvider,
   PlaylistProvider,
+  SongProvider,
 } from "../contexts/providers";
 
 const Layout = () => {
   const [color, setColor] = useState("rgb(16,16,16)");
   const [topBarColor, setTopBarColor] = useState("rgb(16,16,16)");
   const [playlistTitle, setPlaylistTitle] = useState("");
+  const [currentSong, setCurrentSong] = useState(null);
   const [isScrollHeightReached, setIsScrollHeightReached] = useState(false);
   const [scrollbar, setScrollbar] = useState(null);
   const [isLogged, setIsLogged] = useState(true);
@@ -31,6 +33,9 @@ const Layout = () => {
   };
   const updateScrollbar = (scrollbar) => {
     setScrollbar(scrollbar);
+  };
+  const updateCurrentSong = (currentSong) => {
+    setCurrentSong(currentSong);
   };
 
   return (
@@ -52,32 +57,34 @@ const Layout = () => {
           }}
         >
           <PlaylistProvider value={{ playlistTitle, updatePlaylistTitle }}>
-            <div className="h-screen relative m-2">
-              <div className="flex flex-row gap-2">
-                <div className="max-w-20  md:max-w-96 h-auto">
-                  <SideBar />
-                </div>
-                <div className="flex flex-col w-full  bg-transparent  rounded-t-lg">
-                  <div className="">
-                    <TopBar />
+            <SongProvider value={{ currentSong, updateCurrentSong }}>
+              <div className="h-screen relative m-2">
+                <div className="flex flex-row gap-2">
+                  <div className="max-w-20  md:max-w-96 h-auto">
+                    <SideBar />
                   </div>
-                  <div id="scrollbar" className="h-96 flex-grow rounded-b-lg">
-                    <div className="flex-grow  ">
-                      <Scroll id={"scrollbar"} findHeight={true} />
-                      <Outlet />
-                      <Footer />
+                  <div className="flex flex-col w-full  bg-transparent  rounded-t-lg">
+                    <div className="">
+                      <TopBar />
+                    </div>
+                    <div id="scrollbar" className="h-96 flex-grow rounded-b-lg">
+                      <div className="flex-grow  ">
+                        <Scroll id={"scrollbar"} findHeight={true} />
+                        <Outlet />
+                        <Footer />
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div
+                  className={`absolute  w-full z-50 ${
+                    isLogged ? "bottom-0" : "bottom-0 xl:bottom-2 2xl:bottom-4"
+                  }`}
+                >
+                  {isLogged ? <MusicBar /> : <BottomBar />}
+                </div>
               </div>
-              <div
-                className={`absolute  w-full z-50 ${
-                  isLogged ? "bottom-0" : "bottom-0 xl:bottom-2 2xl:bottom-4"
-                }`}
-              >
-                {isLogged ? <MusicBar /> : <BottomBar />}
-              </div>
-            </div>
+            </SongProvider>
           </PlaylistProvider>
         </ScrollProvider>
       </ColorProvider>
