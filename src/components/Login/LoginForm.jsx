@@ -5,6 +5,9 @@ import * as yup from "yup";
 import { MdErrorOutline } from "react-icons/md";
 import useUser from "../../contexts/user";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+import { LuAlertTriangle } from "react-icons/lu";
 
 const LoginForm = () => {
   const [isFocus, setIsFocus] = useState(false);
@@ -12,6 +15,7 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const inputRef = useRef(null);
   const { handleUserId, handleUserLoggedIn, isUserLiggedIn } = useUser();
+  const [isToast, setIsToast] = useState(false);
   const navigate = useNavigate();
 
   const handleKeyPrss = (event) => {
@@ -84,8 +88,50 @@ const LoginForm = () => {
       navigate("/");
     }
   }, [isUserLiggedIn]);
+
+  useEffect(() => {
+    if (isToast) {
+      notify();
+    }
+  }, [isToast]);
+  useEffect(() => {
+    setIsToast(true);
+  }, []);
+
+  const notify = () => {
+    toast.custom(
+      (t) => (
+        <div
+          className={`${
+            t.visible ? "animate-enter" : "animate-leave"
+          } bg-black rounded-lg border-2 border-white p-2 lg:p-4 lg:px-8 text-white flex flex-row gap-2 lg:gap-8 items-center`}
+        >
+          <div className="text-xl lg:text-4xl">
+            <LuAlertTriangle />
+          </div>
+          <div className="text-white font-semibold lg:font-bold">
+            <h1 className="text-sm lg:text-base">Login is only available with email or username</h1>
+            <p className="text-xs lg:text-sm">
+              Please make sure to use your email or username to log in.
+            </p>
+          </div>
+          <div
+            className="text-xl lg:text-4xl cursor-pointer"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            <IoMdCloseCircleOutline />
+          </div>
+        </div>
+      ),
+      {
+        duration: 5000,
+        transitionDuration: 300,
+      }
+    );
+  };
   return (
     <div>
+      <Toaster position="top-right" />
       <form action="" onSubmit={handleSubmit} className="flex flex-col gap-5 ">
         <div className="flex flex-col gap-2 bg-transparent">
           <label
@@ -144,7 +190,10 @@ const LoginForm = () => {
               onBlur={handleBlur}
               ref={inputRef}
             />
-            <div className="px-4 absolute right-0 z-50" onClick={() => setIsVisible((prev) => !prev)}>
+            <div
+              className="px-4 absolute right-0 z-50"
+              onClick={() => setIsVisible((prev) => !prev)}
+            >
               {isVisible ? (
                 <FaEyeSlash className=" " size={20} />
               ) : (
