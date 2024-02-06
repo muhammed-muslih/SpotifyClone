@@ -9,7 +9,7 @@ import useScroll from "../../contexts/scroll";
 import usePlaylist from "../../contexts/playlist";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import useUser from "../../contexts/user";
 
 const TopBar = () => {
   const { topBarColor } = useColor();
@@ -17,6 +17,10 @@ const TopBar = () => {
   const { playlistTitle } = usePlaylist();
   const { pathname } = useLocation();
   const [isplaylist, setIsPlaylist] = useState(false);
+  const { isUserLiggedIn, handleUserId, handleUserLoggedIn, userId } =
+    useUser();
+  const [user] = useState(userId.charAt(0).toUpperCase() ?? "");
+
   useEffect(() => {
     if (pathname.includes("playlist")) {
       setIsPlaylist(true);
@@ -24,6 +28,11 @@ const TopBar = () => {
       setIsPlaylist(false);
     }
   }, [pathname]);
+  const handleLogout = () => {
+    handleUserLoggedIn(false);
+    handleUserId("");
+    localStorage.removeItem("user");
+  };
 
   return (
     <>
@@ -51,18 +60,35 @@ const TopBar = () => {
           )}
         </div>
         <div className="hidden lg:flex gap-4 md:gap-8 items-center">
-          <Link className="font-bold text-white/50 hover:scale-105 inline-block hover:text-white transition-all duration-300 animate-pulse hover:animate-none ">
-            Sign up
-          </Link>
-          <Link
-            to={"/login"}
-            className="bg-white px-1 md:px-8 py-1 md:py-3 rounded-full text-black font-bold inline-block transform hover:scale-105 transition-transform"
-          >
-            Log in
-          </Link>
+          {isUserLiggedIn ? (
+            <div
+              title={userId}
+              className="rounded-full w-10 h-10 flex items-center justify-center border-2 hover:bg-blue-500 cursor-default text-white bg-blue-600 text-lg font-bold"
+            >
+              {user}
+            </div>
+          ) : (
+            <Link className="font-bold text-white/50 hover:scale-105 inline-block hover:text-white transition-all duration-300 animate-pulse hover:animate-none ">
+              Sign up
+            </Link>
+          )}
+          {isUserLiggedIn ? (
+            <div
+              onClick={handleLogout}
+              className="bg-white px-1 md:px-8 py-1 md:py-3 rounded-full text-black font-bold inline-block transform hover:scale-105 transition-transform cursor-default"
+            >
+              Log out
+            </div>
+          ) : (
+            <Link
+              to={"/login"}
+              className="bg-white px-1 md:px-8 py-1 md:py-3 rounded-full text-black font-bold inline-block transform hover:scale-105 transition-transform"
+            >
+              Log in
+            </Link>
+          )}
         </div>
       </div>
-     
     </>
   );
 };

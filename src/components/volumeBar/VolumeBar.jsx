@@ -7,13 +7,11 @@ const VolumeBar = () => {
   const [isHighVolume, setIsHighVolume] = useState(false);
 
   const handleVolume = (e) => {
-    console.log(e.target.value);
     const { value } = e.target;
     setVolume(value);
   };
 
   useEffect(() => {
-    console.log(volume);
     if (volume == 0) {
       setIsMute(true);
     } else if (volume < 70) {

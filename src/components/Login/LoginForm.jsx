@@ -1,14 +1,18 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { MdErrorOutline } from "react-icons/md";
+import useUser from "../../contexts/user";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [isFocus, setIsFocus] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const inputRef = useRef(null);
+  const { handleUserId, handleUserLoggedIn, isUserLiggedIn } = useUser();
+  const navigate = useNavigate();
 
   const handleKeyPrss = (event) => {
     if (event.key === "Enter") {
@@ -60,8 +64,12 @@ const LoginForm = () => {
       ),
   });
   const onSubmit = (values, actions) => {
-    console.log(values);
-    console.log(actions);
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ isLoggedIn: true, userId: values.emailorusername })
+    );
+    handleUserLoggedIn(true);
+    handleUserId(values.emailorusername);
     actions.resetForm();
   };
 
@@ -72,8 +80,10 @@ const LoginForm = () => {
       validationSchema,
     });
   useEffect(() => {
-    console.log(touched);
-  }, [touched]);
+    if (isUserLiggedIn) {
+      navigate("/");
+    }
+  }, [isUserLiggedIn]);
   return (
     <div>
       <form action="" onSubmit={handleSubmit} className="flex flex-col gap-5 ">
@@ -117,7 +127,7 @@ const LoginForm = () => {
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
             className={`flex  w-full rounded-md  text-white focus:ring-2 ring-white border 
-           hover:border-white justify-between items-center ${
+           hover:border-white justify-between items-center relative ${
              (isFocus ? "ring-2" : "ring-0",
              errors.password && touched.password
                ? "border-red-500"
@@ -134,7 +144,7 @@ const LoginForm = () => {
               onBlur={handleBlur}
               ref={inputRef}
             />
-            <div className="px-4" onClick={() => setIsVisible((prev) => !prev)}>
+            <div className="px-4 absolute right-0 z-50" onClick={() => setIsVisible((prev) => !prev)}>
               {isVisible ? (
                 <FaEyeSlash className=" " size={20} />
               ) : (

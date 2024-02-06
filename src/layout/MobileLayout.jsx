@@ -2,6 +2,8 @@ import { SideBar, Footer, TopBar, BottomBar, MusicBar } from "../components";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import { Scroll as Scrollbar } from "../components";
+import useUser from "../contexts/user";
+
 import {
   ColorProvider,
   ScrollProvider,
@@ -16,8 +18,8 @@ const MobileLayout = () => {
   const [currentSong, setCurrentSong] = useState(null);
   const [isScrollHeightReached, setIsScrollHeightReached] = useState(false);
   const [scrollbar, setScrollbar] = useState(null);
+  const {isUserLiggedIn} = useUser()
 
-  const [isLogged, setIsLogged] = useState(true);
 
   const updateColor = (newColor) => {
     setColor(newColor);
@@ -78,7 +80,7 @@ const MobileLayout = () => {
                   </div>
                 </div>
                 <div className="absolute bottom-0 md:bottom-0 xl:bottom-4 w-full z-50">
-                  {isLogged ? <MusicBar /> : <BottomBar />}
+                  {isUserLiggedIn ? <MusicBar /> : <BottomBar />}
                 </div>
               </div>
             </SongProvider>

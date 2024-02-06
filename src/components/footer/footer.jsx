@@ -4,8 +4,10 @@ import {
   FaFacebook,
   FaRegCopyright,
 } from "react-icons/fa";
+import useUser from "../../contexts/user";
 
 const Footer = () => {
+  const { isUserLiggedIn } = useUser();
   return (
     <div className="px-4 sm:px-9 py-4 min-w-full bg-[rgb(18,18,18)] pt-20">
       <div className=" flex justify-between pb-10">
@@ -77,7 +79,11 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="py-20 pb-40 xl:py-14 border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1">
+      <div
+        className={`py-10 ${
+          isUserLiggedIn && "py-20 pb-40 xl:pb-10 "
+        }  border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1`}
+      >
         <FaRegCopyright />
         <h1>2024 Spotify AB</h1>
       </div>

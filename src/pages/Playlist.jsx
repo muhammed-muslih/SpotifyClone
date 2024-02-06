@@ -4,13 +4,17 @@ import { useParams } from "react-router-dom";
 import { playlist1, playlist2 } from "../data/playlists";
 import useColor from "../contexts/color";
 import usePlaylist from "../contexts/playlist";
+import useUser from "../contexts/user";
+import { useNavigate } from "react-router-dom";
 
 const Playlist = () => {
   const { id, playlist } = useParams();
   const [currentPlaylist, setCurrentPlayList] = useState({});
   const { updateColor, updateTopBarColor } = useColor();
   const { updatePlaylistTitle } = usePlaylist();
-  
+  const { isUserLiggedIn } = useUser();
+  const navigate = useNavigate();
+
   const changeColor = (newColor) => {
     updateColor(newColor);
   };
@@ -47,7 +51,12 @@ const Playlist = () => {
       );
     }
   }, [currentPlaylist]);
- 
+
+  useEffect(() => {
+    if (!isUserLiggedIn) {
+      navigate("/");
+    }
+  }, [isUserLiggedIn]);
 
   return (
     <div className="">

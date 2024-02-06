@@ -32,7 +32,6 @@ const ProgressBar = () => {
 
   const handleProgressbar = (e) => {
     const { value } = e.target;
-    console.log(value);
     const percentage = (value / maxValue) * 100;
     const currentValue = numberToTimeString(value);
     setCurrentValue(currentValue);
@@ -44,7 +43,6 @@ const ProgressBar = () => {
     if (currentSong) {
       setIsPlaying(true);
       const max = timeStringToNumber(currentSong.duration);
-      console.log(max);
       setMaxValue(max);
       inputRef.current.value = 0;
       setProgressbarValue(0);
