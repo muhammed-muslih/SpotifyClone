@@ -81,7 +81,7 @@ const Footer = () => {
       </div>
       <div
         className={`py-10 ${
-          isUserLiggedIn && "py-20 pb-40 xl:pb-10 "
+          isUserLiggedIn && "py-24 pb-40 xl:pb-10 "
         }  border-t border-white/10 text-white/50 font-medium text-sm flex items-center gap-1`}
       >
         <FaRegCopyright />
