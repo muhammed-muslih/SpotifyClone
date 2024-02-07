@@ -209,7 +209,7 @@ const LoginForm = () => {
           )}
         </div>
         <div className="flex items-center gap-3 cursor-default px-2 sm:px-0">
-          <button className="focus:ring-4 ring-white rounded-full p-0.5 cursor-default">
+          <button type="button" className="focus:ring-4 ring-white rounded-full p-0.5 cursor-default">
             <div
               className={`w-8 rounded-full h-4 relative  ${
                 rememberMe
