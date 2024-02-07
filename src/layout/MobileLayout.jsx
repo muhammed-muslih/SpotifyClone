@@ -79,7 +79,7 @@ const MobileLayout = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bottom-15 md:bottom-0 xl:bottom-4 w-full z-50">
+                <div className="absolute bottom-14 md:bottom-0 xl:bottom-4 w-full z-50">
                   {isUserLiggedIn ? <MusicBar /> : <BottomBar />}
                 </div>
               </div>
